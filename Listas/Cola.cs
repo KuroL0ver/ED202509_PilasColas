@@ -1,12 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Listas
+﻿namespace Listas
 {
     internal class Cola
     {
+        //Aqui se implementa la clase cola usando también la lista 
+        private List<string> _lista;
+        public Cola()
+        {
+            _lista = new List<string>();
+        }
+        public void Agregar(string dato)
+        {
+            _lista.Add(dato);
+        }
+        public void Eliminar()
+        {
+            if (_lista.Count == 0)
+            {
+                throw new Exception("Cola vacia");
+            }
+            _lista.RemoveAt(0);
+        }
+        public void Imprimir()
+        {
+            
+            foreach (string dato in _lista)
+            {
+                Console.WriteLine( dato );
+            }
+            return;
+        }
+
+        
     }
 }
